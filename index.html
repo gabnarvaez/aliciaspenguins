@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alicia's Penguins</title>
+    <link rel="icon" href="./img/logo.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-items">
+                <h1>Alicia's Penguins</h1>
+                <a class="carrito-header"  href="./carrito.html">
+                    🛒 <span id="numerito">0</span>
+                </a>
+            </div>
+            <button class="daynight" id="dayNightButton" onclick="toggleMode()"> Day/Night🌛</button>
+        </div>
+    </header>
+
+
+    
+      
+    
+    <main class="main">
+
+<h1 class="centered-image">
+    <img src="./img/logo.jpg">
+</h1>
+        <section class="container">
+            <h2 class="titulo">Productos</h2>
+            <div class="productos" id="productos">
+            </div>
+        </section>
+        
+        <section class="container">
+            <h2 class="titulo">Carrito</h2>
+            <div class="carrito">
+                <div id="carrito-vacio">
+                    <h4>Tu carrito está vacío. 🙁</h4>
+                </div>
+                <div class="carrito-productos d-none" id="carrito-productos">
+                </div>
+                <div class="carrito-total">
+                    <h2>Total: <span id="carrito-total">$0</span></h2>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-column1">
+                    <h4>Contact us at:</h4>
+                    <p>+52 333 077 6291</p>
+                </div>
+                <div class="footer-column2">
+                    <h4>Alicia's penguins e-commerce</h4>
+                    <p>All rights reserved, Gabriel Narvaez, 2024.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./JS/main.js"></script>
+</body>
+</html>
