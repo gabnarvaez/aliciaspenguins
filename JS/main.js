@@ -40,6 +40,7 @@ const carritoVacio = document.querySelector("#carrito-vacio");
 const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
 const numerito = document.querySelector("#numerito");
+const btnVaciar = document.querySelector("#vaciar");
 
 
 productos.forEach((producto) => {
@@ -67,10 +68,11 @@ function actualizarCarrito() {
     if (carrito.length === 0) {
         carritoVacio.classList.remove("d-none");
         carritoProductos.classList.add("d-none");
+        btnVaciar.classList.add("d-none");
     } else {
         carritoVacio.classList.add("d-none");
         carritoProductos.classList.remove("d-none");
-
+        btnVaciar.classList.remove("d-none");
         carritoProductos.innerHTML = "";
         carrito.forEach(producto => {
             const div = document.createElement("div");
@@ -170,7 +172,7 @@ const calcularNumerito = () => {
     numerito.innerText = numeritoTotal;
 }
 
-
+actualizarCarrito();
 
 function toggleMode() {
     const body = document.body;
@@ -178,3 +180,33 @@ function toggleMode() {
 }
 
 document.body.classList.remove('dark-mode');
+
+
+btnVaciar.addEventListener("click", () => {
+    carrito.length = 0;
+    actualizarCarrito()
+})
+
+fetch('https://pokeapi.co/api/v2/pokemon/393')
+  .then(response => response.json() )
+  .then(data => {
+
+    let element = document.getElementById('elem')
+    element.innerHTML = `
+    <p>${data.name}</p>
+    <p>${data.order}</p>
+    <img src=${data.sprites.front_deafault}'/>
+    `;
+
+    console.log(data)
+  })
+  .catch(err=>console.log(err))
+
+  function showSuccessAlert() {
+    Swal.fire({
+        title: '¡Pago procesado con éxito!',
+        text: 'Tu pago ha sido procesado correctamente.',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    });
+}
